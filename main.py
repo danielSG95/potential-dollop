@@ -51,10 +51,8 @@ if dataset is not None:
     elif operation_type == 'Regresion Polinomial':
         polynomial_regression(dataset)
     elif operation_type == 'Redes Neuronales':
-        # red_neuronal(dataset)
-        decision_tree(dataset)
-
+        red_neuronal(dataset)
     elif operation_type == 'Clasificador Gaussiano':
         gauss(dataset)
     elif operation_type == 'Clasificador de arboles de decision':
-        arbol_decision(dataset)
+        decision_tree(dataset)

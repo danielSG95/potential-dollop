@@ -20,18 +20,21 @@ def decision_tree(data):
     X = data[features]
     y = data[target]
 
-    for i in X:
-        print(data[i].dtype)
-
-
     lab = preprocessing.LabelEncoder()
     y = lab.fit_transform(y)
 
+    for i in X:
+        if data[i].dtype == 'object':
+            X[i] = lab.fit_transform(X[i])
+
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
 
-    clf = DecisionTreeClassifier(criterion="entropy", max_depth=5)
+    #clf = DecisionTreeClassifier(criterion="entropy", max_depth=5)
+    clf = DecisionTreeClassifier(max_depth=5)
 
     clf = clf.fit(X_train, y_train)
+
 
     y_pred = clf.predict(X_test)
     # evaluate the model
@@ -50,4 +53,4 @@ def decision_tree(data):
     graph.write_png('arbol.png')
     Image(graph.create_png())
 
-    st.download_button('Descargar imagen', graph.create_png(), file_name='arbol.png' )
+    st.download_button('Descargar imagen', graph.create_png(), file_name='arbol.png')

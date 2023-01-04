@@ -38,16 +38,16 @@ def gauss(data):
 
     label = le.fit_transform(result)
 
-    with st.expander("Resultado con etiquetas"):
+    with st.expander("Resultado codificando"):
         featuresencoders = list(zip((listafittransform)))
         featuresencoders = np.array(featuresencoders)
         tamcolumnas = len(listaa)
         tamfilas = featuresencoders.size
         featuresencoders = featuresencoders.reshape(int(tamfilas/tamcolumnas), tamcolumnas)
 
-        st.dataframe(featuresencoders)
+        # st.dataframe(featuresencoders)
 
-    with st.expander('Resultados sin etiquetas'):
+    with st.expander('Matriz de resultados'):
         features = list(zip(np.asarray(listadedf)))
         features = np.asarray(features)
         tamcolumnas = len(features)
@@ -78,7 +78,7 @@ def gauss(data):
         map_obj = np.array(map_obj)
         predicted = model.predict(np.asarray([map_obj]))
 
-        st.subheader('Prediccion con etiquetas')
+        st.subheader('Resultado de prediccion')
         st.write(predicted)
 
 
