@@ -4,6 +4,6 @@ xlrd
 matplotlib
 numpy
 scikit-learn
-scikit-
+scikit-metrics
 pydotplus
 IPython
