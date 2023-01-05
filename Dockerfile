@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/danielSG95/machine-learning .
+RUN git clone https://github.com/danielSG95/potential-dollop .
 
 RUN pip3 install -r requirements.txt
 
